@@ -1,0 +1,11 @@
+{
+  "name": "clean-survey-api",
+  "version": "1.0.0",
+  "description": "Clean architecture applied to a surveys API.",
+  "main": "index.js",
+  "author": "Bruno Lombardi <bruno@kuppi.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^3.1.0"
+  }
+}
