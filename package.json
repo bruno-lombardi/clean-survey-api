@@ -6,6 +6,8 @@
   "author": "Bruno Lombardi <bruno@kuppi.com.br>",
   "license": "MIT",
   "devDependencies": {
-    "git-commit-msg-linter": "^3.1.0"
+    "@types/node": "^14.14.37",
+    "git-commit-msg-linter": "^3.1.0",
+    "typescript": "^4.2.3"
   }
 }
