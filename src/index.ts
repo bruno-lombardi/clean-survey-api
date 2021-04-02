@@ -9,3 +9,7 @@ export function sub(...values: number[]): number {
 export function mult(...values: number[]): number {
   return values.reduce((x, y) => x * y)
 }
+
+export function sqr(value: number): number {
+  return Math.sqrt(value)
+}
