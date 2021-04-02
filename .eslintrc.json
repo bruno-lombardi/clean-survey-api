@@ -7,9 +7,9 @@
   },
   "rules": {
     "no-console": 1,       // Means warning
-    "prettier/prettier": 2, // Means error
     "prettier": {
-      "space-before-function-paren": 0
+      "space-before-function-paren": 0,
+      "prettier": 2
     }
   }
 }

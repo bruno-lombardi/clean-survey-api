@@ -1,5 +1,5 @@
 {
-  "./**/*.{js,ts}": [
+  "*.{js,ts}": [
     "prettier --write './**/*.{js,ts,md}' --config ./.prettierrc.json",
     "eslint '*/**/*.{js,ts}' --quiet --fix",
     "git add"
