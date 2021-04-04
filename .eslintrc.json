@@ -6,6 +6,7 @@
   "plugins": ["prettier"],
   "rules": {
     "no-console": "warn", // Means warning
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/strict-boolean-expressions": 0
   }
 }
