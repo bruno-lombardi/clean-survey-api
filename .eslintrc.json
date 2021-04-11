@@ -11,7 +11,8 @@
     "@typescript-eslint/naming-convention": [
       "warn",
       {
-        "format": ["camelCase", "snake_case"]
+        "selector": "default",
+        "format": ["camelCase", "snake_case", "PascalCase"]
       }
     ]
   }
