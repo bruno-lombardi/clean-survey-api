@@ -14,6 +14,13 @@
         "selector": "default",
         "format": ["camelCase", "snake_case", "PascalCase"]
       }
+    ],
+    "@typescript-eslint/consistent-type-assertions": [
+      "warn",
+      {
+        "assertionStyle": "as",
+        "objectLiteralTypeAssertions": "allow"
+      }
     ]
   }
 }
