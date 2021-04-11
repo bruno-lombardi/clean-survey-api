@@ -27,9 +27,9 @@ const makeAddAccount = (): AddAccount => {
         id: 'valid_id',
         name: 'valid_name',
         email: 'valid_email@email.com',
-        password: 'valid_password',
+        password: 'valid_password'
       }
-      return new Promise((resolve, reject) => resolve(fakeAccount))
+      return await new Promise((resolve, reject) => resolve(fakeAccount))
     }
   }
   return new AddAccountStub()
@@ -161,7 +161,7 @@ describe('SignUpController', () => {
     expect(httpResponse.statusCode).toBe(500)
     expect(httpResponse.body).toEqual(new ServerError())
   })
-  
+
   it('should call AddAccount with correct values', async () => {
     const { sut, addAccountStub } = makeSut()
     const addSpy = jest.spyOn(addAccountStub, 'add')
@@ -177,14 +177,14 @@ describe('SignUpController', () => {
     expect(addSpy).toHaveBeenCalledWith({
       name: 'username',
       email: 'user@email.com',
-      password: '123password',
+      password: '123password'
     })
   })
 
   it('should return 500 if AddAccount throws exception', async () => {
     const { sut, addAccountStub } = makeSut()
-    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(() => {
-      return new Promise((resolve, reject) => reject(new Error()))
+    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(async () => {
+      return await new Promise((resolve, reject) => reject(new Error()))
     })
     const httpRequest = {
       body: {
@@ -198,7 +198,7 @@ describe('SignUpController', () => {
     expect(httpResponse.statusCode).toBe(500)
     expect(httpResponse.body).toEqual(new ServerError())
   })
-  
+
   it('should return 200 if valid data is provided', async () => {
     const { sut } = makeSut()
     const httpRequest = {
@@ -206,7 +206,7 @@ describe('SignUpController', () => {
         name: 'valid_name',
         email: 'valid_email@email.com',
         password: 'valid_password',
-        password_confirmation: 'valid_password' 
+        password_confirmation: 'valid_password'
       }
     }
     const httpResponse = await sut.handle(httpRequest)
@@ -215,7 +215,7 @@ describe('SignUpController', () => {
       id: 'valid_id',
       name: 'valid_name',
       email: 'valid_email@email.com',
-      password: 'valid_password',
+      password: 'valid_password'
     })
   })
 })

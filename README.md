@@ -28,6 +28,7 @@ This project is a study of multiple software development principles that compose
 This API will handle **surveys** creation, listing, responding and survey results, including user registration and authentication.
 
 ## ☀️ Principles
+
 - Single Responsibility Principle (SRP)
 - Open Closed Principle (OCP)
 - Liskov Substitution Principle (LSP)
