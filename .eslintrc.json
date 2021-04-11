@@ -7,6 +7,12 @@
   "rules": {
     "no-console": "warn", // Means warning
     "prettier/prettier": "error",
-    "@typescript-eslint/strict-boolean-expressions": 0
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "format": ["camelCase", "snake_case"]
+      }
+    ]
   }
 }
