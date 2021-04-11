@@ -1,4 +1,4 @@
-import { badRequest, serverError } from '../helpers/http-helper'
+import { badRequest, ok, serverError } from '../helpers/http-helper'
 import { Controller } from '../protocols/controller'
 import { EmailValidator } from '../protocols/email-validator'
 import { HttpRequest, HttpResponse } from '../protocols/http'
@@ -44,15 +44,12 @@ export class SignUpController implements Controller {
       if (!isEmailValid) {
         return badRequest(new InvalidParamError('email'))
       }
-      const account = this.addAccount.add({
+      const account = await this.addAccount.add({
         name,
         email,
         password
       })
-      return {
-        statusCode: 200,
-        body: account,
-      }
+      return ok(account)
       return badRequest(new Error('Not implemented'))
     } catch (err) {
       return serverError()
