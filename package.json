@@ -27,6 +27,10 @@
     "typescript": "^4.2.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --passWithNoTests --silent --runInBand",
+    "test:unit": "yarn test --watch -c jest-unit-config.js",
+    "test:integration": "yarn test --watch -c jest-integration-config.js",
+    "test:staged": "yarn test --findRelatedTests",
+    "test:ci": "yarn test --coverage"
   }
 }
