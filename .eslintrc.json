@@ -12,7 +12,8 @@
       "warn",
       {
         "selector": "default",
-        "format": ["camelCase", "snake_case", "PascalCase"]
+        "format": ["camelCase", "snake_case", "PascalCase"],
+        "leadingUnderscore": "allow"
       }
     ],
     "@typescript-eslint/consistent-type-assertions": [
