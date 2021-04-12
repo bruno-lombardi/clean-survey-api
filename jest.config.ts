@@ -8,7 +8,8 @@ const config: Config.InitialOptions = {
   testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
-  }
+  },
+  preset: '@shelf/jest-mongodb'
 }
 
 export default config
