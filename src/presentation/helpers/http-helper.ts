@@ -11,7 +11,7 @@ export const ok = (data: Record<string, any>): HttpResponse => ({
   statusCode: 200
 })
 
-export const serverError = (): HttpResponse => ({
-  body: new ServerError(),
+export const serverError = (error: Error): HttpResponse => ({
+  body: new ServerError(error.stack),
   statusCode: 500
 })
