@@ -1,10 +1,10 @@
-import { badRequest, ok, serverError } from '../helpers/http-helper'
-import { Controller } from '../protocols/controller'
-import { EmailValidator } from '../protocols/email-validator'
-import { HttpRequest, HttpResponse } from '../protocols/http'
-import InvalidParamError from '../errors/invalid-param-error'
-import MissingParamError from '../errors/missing-param-error'
-import { AddAccount } from '../../domain/usecases/add-account'
+import { badRequest, ok, serverError } from '../../helpers/http-helper'
+import { Controller } from '../../protocols/controller'
+import { EmailValidator } from '../../protocols/email-validator'
+import { HttpRequest, HttpResponse } from '../../protocols/http'
+import InvalidParamError from '../../errors/invalid-param-error'
+import MissingParamError from '../../errors/missing-param-error'
+import { AddAccount } from '../../../domain/usecases/add-account'
 
 interface SignUpRequestBody {
   name: string
