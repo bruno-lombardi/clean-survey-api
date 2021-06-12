@@ -1,5 +1,5 @@
 import { DbAddAccount } from '../../../data/usecases/add-account/db-add-account'
-import { BCryptAdapter } from '../../../infra/cryptography/bcrypt-adapter'
+import { BCryptAdapter } from '../../../infra/cryptography/bcrypt-adapter/bcrypt-adapter'
 import { AccountMongoRepository } from '../../../infra/db/mongodb/account-repository/account'
 import { LogMongoRepository } from '../../../infra/db/mongodb/log-repository/log'
 import { SignUpController } from '../../../presentation/controllers/signup/sign-up-controller'
@@ -9,9 +9,9 @@ import { makeSignUpValidation } from './signup-validation'
 
 export const makeSignUpController = (): Controller => {
   const saltRoutes = 12
-  const encrypter = new BCryptAdapter(saltRoutes)
+  const hasher = new BCryptAdapter(saltRoutes)
   const accountRepository = new AccountMongoRepository()
-  const dbAddAccount = new DbAddAccount(encrypter, accountRepository)
+  const dbAddAccount = new DbAddAccount(hasher, accountRepository)
   const signUpController = new SignUpController(
     dbAddAccount,
     makeSignUpValidation()
