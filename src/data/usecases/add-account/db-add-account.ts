@@ -3,7 +3,7 @@ import {
   AddAccount,
   AddAccountModel
 } from '../../../domain/usecases/add-account'
-import { AddAccountRepository } from '../../protocols/add-account-repository'
+import { AddAccountRepository } from '../../protocols/db/account/add-account-repository'
 import { Hasher } from '../../protocols/crypto/hasher'
 
 export class DbAddAccount implements AddAccount {
