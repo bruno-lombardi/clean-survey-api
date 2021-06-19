@@ -27,7 +27,10 @@ export const mongoHelper = {
   },
 
   map<T>(document: any): T {
-    const { _id, ...rest } = document
-    return { id: _id, ...rest }
+    if (document) {
+      const { _id, ...rest } = document
+      return { id: _id, ...rest }
+    }
+    return null
   }
 }
